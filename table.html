@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Моя третья страничка</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="header">
+            <a href="Лаба2 цк.html">Основная страница</a>
+            <a href="page2.html">Позиционирование элементов</a>
+            <a href="table.html">Таблица</a>
+        </div>
+        <h1><p>Топ моих любимых игр на ПК/PS4:</p></h1>
+    </head>
+    <body>
+        <form id="form">           
+                <div class="label">
+                <div>
+                    <label for="number">№:</label><br>
+                    <input type="text" id="number" name="number" value=""><br>
+                    <label for="name">Название:</label><br>
+                    <input type="text" id="name" name="name" value=""><br>
+                    <label for="genre">Жанр:</label><br>
+                    <input type="text" id="genre" name="genre" value=""><br>
+                    <label for="developer">Разработчик:</label><br>
+                    <input type="text" id="developer" name="developer" value=""><br>
+                    <label for="modes">Режимы:</label><br>
+                    <input type="text" id="modes" name="modes" value=""><br>
+                    <input type="submit" value="Отправить" style="margin-top: 20px; padding: 5px;" onclick="add()">
+                </div>
+            
+            </div>
+        </form>
+        <script>
+            document.getElementById('form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const number = document.getElementById('number').value;
+                const name = document.getElementById('name').value;
+                const genre = document.getElementById('genre').value;
+                const developer = document.getElementById('developer').value;
+                const modes = document.getElementById('modes').value;
+
+                const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${number}</td>
+                <td>${name}</td>               
+                <td>${genre}</td>
+                <td>${developer}</td>
+                <td>${modes}</td>
+            `;
+
+                newRow.classList.add('tr:nth-child(odd)');
+                document.getElementById('mainTable').appendChild(newRow);
+
+
+            document.getElementById('form').reset();
+
+            });
+        </script>
+        <div>
+    <table>
+        <caption><p>Чуть-чуть информации о моих любимых играх:</caption></p>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Название</th>
+                <th>Жанр</th>
+                <th>Разработчик</th>
+                <th>Режимы</th>
+            </tr>
+        </thead>
+        <tbody id = mainTable>
+            <tr>
+                <td>1</td>
+                <td>The Last of Us 1,2 part</td>
+                <td>Приключенческий экшен, стелс</td>
+                <td>Naughty Dog</td>
+                <td>Однопользовательский<br>
+               
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Marvel’s Spider-Man</td>
+                <td>Приключенческий экшен</td>
+                <td>Insomniac Games</td>
+                <td>Однопользовательский</td>
+                
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Detroit: Become Human</td>
+                <td>Приключенческий экшен от третьего лица<br>«интерактивное кино»</td>
+                <td>Quantic Dream</td>
+                <td>Однопользовательский</td>
+                
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Beyond: Two Souls</td>
+                <td>Action-adventure<br>«интерактивное кино»</td>
+                <td>Quantic Dream</td>
+                <td>Однопользовательский<br>Кооперативный</td>
+                
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Uncharted 4: A Thief’s End</td>
+                <td>Action-adventure<br>Шутер от третьего лица</td>
+                <td>Naughty Dog</td>
+                <td>Однопользовательский<br>Многопользовательский<br>Кооперативный</td>
+                
+            </tr>
+        </tbody>
+    </table>
+    </body>
+</html>
